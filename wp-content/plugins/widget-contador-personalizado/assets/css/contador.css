@@ -1,0 +1,182 @@
+/* Contenedor principal del widget */
+.widget-contador-wrapper {
+    padding: 35px 25px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Texto adicional superior */
+.contador-texto {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    height: auto;
+    line-height: 1.4;
+}
+
+/* Contenedor de las cajas de tiempo y separadores */
+.contador-elementos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 14px;
+    height: auto;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Cada caja del contador (Días, Horas, etc.) */
+.contador-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    min-width: 90px;
+    flex: 1;
+    height: auto;
+    padding: 18px 12px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    box-sizing: border-box;
+}
+
+.contador-item:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Valor numérico */
+.contador-valor {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 6px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    height: auto;
+}
+
+/* Etiqueta del valor (Días, Horas, etc.) */
+.contador-etiqueta {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+    height: auto;
+    opacity: 0.85;
+}
+
+/* Separadores de puntos dobles (:) */
+.contador-separador {
+    font-size: 2.2rem;
+    font-weight: 700;
+    opacity: 0.4;
+    user-select: none;
+    margin-bottom: 22px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- RESPONSIVE PARA TABLETAS Y DISPOSITIVOS MEDIANOS (<= 768px) --- */
+@media screen and (max-width: 768px) {
+    .widget-contador-wrapper {
+        padding: 25px 18px;
+        border-radius: 14px;
+    }
+
+    .contador-texto {
+        font-size: 1.05rem;
+        margin-bottom: 20px;
+    }
+
+    /* Ocultar los separadores (:) en tablets/móvil para evitar saltos de línea y desalineaciones */
+    .contador-separador {
+        display: none !important;
+    }
+
+    /* Convertir en un grid limpio de 4 columnas iguales */
+    .contador-elementos {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        max-width: 100%;
+    }
+
+    .contador-item {
+        min-width: 0;
+        padding: 14px 8px;
+        border-radius: 10px;
+    }
+
+    .contador-valor {
+        font-size: 1.8rem;
+    }
+
+    .contador-etiqueta {
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* --- RESPONSIVE PARA MÓVILES PORTRAIT (<= 480px) --- */
+@media screen and (max-width: 480px) {
+    .widget-contador-wrapper {
+        padding: 20px 14px;
+    }
+
+    .contador-texto {
+        font-size: 0.95rem;
+        margin-bottom: 16px;
+    }
+
+    /* En móviles pequeños, cambiar a un Grid 2x2 para que los números sean grandes, imponentes y legibles */
+    .contador-elementos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .contador-item {
+        padding: 18px 10px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.09);
+    }
+
+    .contador-valor {
+        font-size: 2.2rem;
+        margin-bottom: 4px;
+    }
+
+    .contador-etiqueta {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+}
+
+/* --- RESPONSIVE PARA PANTALLAS MUY PEQUEÑAS (<= 360px) --- */
+@media screen and (max-width: 360px) {
+    .contador-valor {
+        font-size: 1.8rem;
+    }
+
+    .contador-etiqueta {
+        font-size: 0.68rem;
+    }
+}

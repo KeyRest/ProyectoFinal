@@ -1,0 +1,25 @@
+# OS generated files #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDEs and Editors #
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and Temp #
+*.log
+*.tmp
+local-xdebuginfo.php
+
+# WordPress Backups and Large Archives (>100MB limit for GitHub) #
+wp-content/ai1wm-backups/
+*.wpress
+*.sql.gz
